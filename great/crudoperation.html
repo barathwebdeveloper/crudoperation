@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="crudoperation.css">
+</head>
+<body>
+  
+    <h1 class="coll"> Employe Verification Form </h1>
+    <form action="">
+
+        <div class="form">
+           
+            <div class="lion">
+                <label id="one" for="">Name :</label>
+                <input type="text" placeholder="enter your name" id="id">    
+            </div>
+            <div class="onee">
+                <label id="two" for="">Email:</label>
+                <input type="text" placeholder="enter your email" id="head">
+            </div>
+            <div class="the">
+                <label id="three" for="">Adders :</label>
+                <input type="text" placeholder="enter your adders" id="Content">
+            </div>
+            <div  class="boys">
+                <label id="four" for="">phone :</label>
+            <input type="text" placeholder="enter your college" id="Tags">
+            </div>
+            <button id="btnadd">Add</button>
+        </div>
+       
+       
+       
+        
+        
+        
+    </form>
+    <div>
+        <ul class="would">
+            <li>
+                <div style="display: flex;" class="out"> 
+                    <h1 class="java">Name</h1>
+                    <h1 class="heade">Email</h1>
+                    <h1 class="cont">Adders</h1>
+                    <h1 class="tags">phone</h1>
+                   
+                </div>
+            </li>
+            <li>
+               <div id="uppendingdata">
+
+               </div> 
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        let id = document.getElementById("id");
+        let head = document.getElementById("head");
+        let content = document.getElementById("Content");
+        let Tags= document.getElementById("Tags");      
+        
+
+        btnadd.addEventListener("click",buttonfunction);
+
+        
+        function buttonfunction(event) {
+            event.preventDefault();
+
+                
+
+                  
+                let uppendinginnerdivision = document.createElement("div");
+                uppendingdata.appendChild(uppendinginnerdivision)
+
+                let idnewtag = document.createElement("input")
+                idnewtag.value=id.value;
+                idnewtag.setAttribute("readonly","readonly");
+                idnewtag.classList.add("add")
+                uppendinginnerdivision.appendChild(idnewtag);
+
+
+
+                let headnewtag = document.createElement("input")
+                headnewtag.value=head.value;
+                headnewtag.setAttribute("readonly","readonly");
+                headnewtag.classList.add("nwe")
+                uppendinginnerdivision.appendChild(headnewtag);
+
+
+                let contentnewtag = document.createElement("input")
+                contentnewtag.value=content.value;
+                contentnewtag.setAttribute("readonly","readonly");
+                contentnewtag.classList.add("tag")
+                uppendinginnerdivision.appendChild(contentnewtag);
+
+
+
+                let Tagsnewtag = document.createElement("input")
+                Tagsnewtag.value=Tags.value;
+                Tagsnewtag.setAttribute("readonly","readonly");
+                Tagsnewtag.classList.add("list")
+                uppendinginnerdivision.appendChild(Tagsnewtag);
+
+
+
+              id.value="";
+              head.value="";
+              content.value="";
+              Tags.value="";
+                                         
+
+               
+
+
+                
+
+                let editbtn = document.createElement("button")
+                editbtn.innerHTML="Edit";
+                uppendinginnerdivision.appendChild(editbtn);
+                editbtn.classList.add("edite")
+
+
+                editbtn.addEventListener("click",editfunction);
+                function editfunction(){
+
+                    id.value=idnewtag.value;
+
+
+                    idnewtag.removeAttribute("readonly","readonly");
+                    headnewtag.removeAttribute("readonly","readonly");
+                    contentnewtag.removeAttribute("readonly","readonly");
+                    Tagsnewtag.removeAttribute("readonly","readonly");
+                    
+                   
+                  
+                    
+                }
+                
+
+
+
+                let savebtton = document.createElement("button");
+                savebtton.innerHTML = "save";
+                uppendinginnerdivision.appendChild(savebtton);
+                savebtton.classList.add("botone")
+
+                savebtton.addEventListener("click", savefunction);
+                    function savefunction(){
+
+                        idnewtag.setAttribute("readonly", "readonly");
+                       headnewtag.setAttribute("readonly", "readonly");
+                        contentnewtag.setAttribute("readonly", "readonly");
+                        Tagsnewtag.setAttribute("readonly", "readonly");
+                       
+                    }
+          
+                let deletebtn = document.createElement("button")
+                deletebtn.innerHTML="Delete";
+                uppendinginnerdivision.appendChild(deletebtn);
+                deletebtn.classList.add("delite")
+                deletebtn.addEventListener("click",deletefunction);
+                function deletefunction(){
+                    uppendinginnerdivision.style.display="none"
+                    
+                }
+
+        }
+
+
+    </script>
+</body>
+</html>
